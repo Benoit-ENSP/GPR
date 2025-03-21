@@ -1,0 +1,55 @@
+name: Run PHPUnit Tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: gpr_test
+        ports:
+          - 8889:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -u root --password=root"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          extensions: mbstring, intl, pdo, pdo_mysql, xdebug
+          coverage: xdebug
+
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist
+
+      - name: Copy .env
+        run: cp .env.example .env
+
+      - name: Wait for MySQL to be ready
+        run: |
+          until mysqladmin ping -h 127.0.0.1 -P 8889 -u root --password=root --silent; do
+            echo "Waiting for MySQL on port 8889..."
+            sleep 5
+          done
+
+      - name: Run migrations
+        run: php spark migrate --all
+
+      - name: Run PHPUnit tests
+        run: vendor/bin/phpunit --coverage-text
