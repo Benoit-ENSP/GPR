@@ -1,46 +1,44 @@
-# CodeIgniter system files
+# 💥 Fichiers sensibles
+.env
+.env.*  # Si tu fais plusieurs configs genre .env.testing etc.
+
+# 🔐 Sécurité
+*.pem
+*.key
+
+# 📦 Dépendances (si tu utilises composer ou npm plus tard)
+vendor/
+node_modules/
+
+# ⚙️ Fichiers générés automatiquement
 /public/build/
-/writable/cache/*
-/writable/debugbar/*
-/writable/logs/*
-/writable/session/*
-/writable/uploads/*
+public/hot
 
-# Ignore les fichiers générés par Composer
-/vendor/
-composer.lock
+# 🗑️ Systèmes temporaires
+*.log
+*.cache
+*.tmp
+*.DS_Store
+Thumbs.db
+*.swp
 
-# Fichiers de tests et rapports
-/build/
+# 🧪 Tests & couverture
 coverage/
 .phpunit.result.cache
 
-# IDE & éditeurs
+# 📷 Uploads / fichiers utilisateurs (si jamais t’en as plus tard)
+writable/uploads/
+writable/tmp/
+writable/cache/
+writable/logs/
+
+# 💾 BDD locale (si tu exportes un jour tes .sql ici)
+*.sql
+
+# 🚧 Fichiers IDE
 .vscode/
 .idea/
+*.sublime-*
 
-# Systèmes & OS
-.DS_Store
-Thumbs.db
-
-# Environnement
-.env
-
-# Fichiers d'exécution PHP
-*.log
-
-# MAMP spécifiques (rare mais utile)
-*.sql
-*.sock
-
-# Node (si un frontend est présent)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Backup & fichiers temporaires
-*.bak
-*.tmp
-*.swp
-*.swo
+# 🐘 MAMP spécifique (si jamais)
+*.conf
