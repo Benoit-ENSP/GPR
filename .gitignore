@@ -1,0 +1,47 @@
+# ⚙️ Fichiers système macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# 💣 Dossiers temporaires
+tmp/
+temp/
+*.tmp
+*.log
+
+# 🐘 Fichiers PHP & environnement
+.env
+.env.*
+*.log
+phpunit.xml
+.phpunit.result.cache
+
+# 🧱 CodeIgniter fichiers qu'on ne versionne pas
+writable/cache/*
+writable/logs/*
+writable/session/*
+writable/testing/*
+!writable/index.html
+
+# 📦 Dépendances Composer
+/vendor/
+
+# 📁 IDEs (VS Code, PHPStorm, etc.)
+.vscode/
+.idea/
+
+# 🧪 Tests & couverture
+coverage/
+.phpunit.result.cache
+
+# 🐘 Dump SQL (évite si lourd ou versionné ailleurs)
+*.sql
+
+# 🚧 Fichiers que tu peux générer en local
+/public/build/
+public/hot
+public/storage
+storage/
+node_modules/
