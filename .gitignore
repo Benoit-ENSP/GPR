@@ -25,6 +25,8 @@ writable/cache/*
 writable/logs/*
 writable/session/*
 writable/testing/*
+writable/uploads/*
+writable/debugbar/*
 !writable/index.html
 
 # 📦 Composer
