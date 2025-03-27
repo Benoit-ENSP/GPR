@@ -46,3 +46,6 @@ storage/
 # 🐘 Dumps de base de données (à ignorer sauf version spécifique)
 *.sql
 *.sql.gz
+
+
+public/assets/
