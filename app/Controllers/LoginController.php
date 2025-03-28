@@ -13,9 +13,9 @@ class LoginController extends BaseController
         $this->googleClient = new \Google_Client();
 
         // ✅ Ton supérieur en a besoin :
-        $this->googleClient->setClientId(''); // à remplir par lui
-        $this->googleClient->setClientSecret(''); // à remplir par lui
-        $this->googleClient->setRedirectUri('http://localhost/login/callback');
+        $this->googleClient->setClientId(env('GOOGLE_CLIENT_ID'));
+        $this->googleClient->setClientSecret(env('GOOGLE_CLIENT_SECRET'));
+        $this->googleClient->setRedirectUri(env('GOOGLE_REDIRECT_URI'));
 
         $this->googleClient->addScope('email');
         $this->googleClient->addScope('profile');
