@@ -1,53 +1,40 @@
 #-------------------------
-# Operating Specific Junk Files
+# SYSTEME / OS
 #-------------------------
 
-# OS X
+# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# OS X Thumbnails
 ._*
 
-# Windows image file caches
+# Windows
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-
-# Recycle Bin used on file shares
 $RECYCLE.BIN/
-
-# Windows Installer files
 *.cab
 *.msi
 *.msm
 *.msp
-
-# Windows shortcuts
 *.lnk
 
 # Linux
 *~
-
-# KDE directory preferences
 .directory
-
-# Linux trash folder which might appear on any partition or disk
 .Trash-*
 
 #-------------------------
-# Environment Files
+# ENVIRONNEMENT
 #-------------------------
-# These should never be under version control,
-# as it poses a security risk.
 .env
 .vagrant
 Vagrantfile
 
 #-------------------------
-# Temporary Files
+# FICHIERS TEMPORAIRES CI4
 #-------------------------
+
 writable/cache/*
 !writable/cache/index.html
 
@@ -66,7 +53,7 @@ writable/debugbar/*
 php_errors.log
 
 #-------------------------
-# User Guide Temp Files
+# USER GUIDE CI4
 #-------------------------
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
@@ -74,33 +61,30 @@ user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 
 #-------------------------
-# Test Files
+# TESTS
 #-------------------------
 tests/coverage*
-
-# Don't save phpunit under version control.
 phpunit
+/results/
+phpunit*.xml
 
 #-------------------------
-# Composer
+# DEPENDANCES
 #-------------------------
 vendor/
 
 #-------------------------
-# IDE / Development Files
+# IDEs
 #-------------------------
 
-# Modules Testing
-_modules/*
-
-# phpenv local config
-.php-version
-
-# Jetbrains editors (PHPStorm, etc)
+# PHPStorm / JetBrains
 .idea/
 *.iml
 
-# Netbeans
+# VSCode
+.vscode/
+
+# NetBeans
 nbproject/
 build/
 nbbuild/
@@ -117,17 +101,14 @@ nb-configuration.xml
 *.sublime-workspace
 *.sublime-project
 .phpintel
-/api/
 
-# Visual Studio Code
-.vscode/
-
-/results/
-/phpunit*.xml
-
+# Modules de test custom
+_modules/
+.php-version
 
 #-------------------------
-# Je mets ça là pour le moment vu que je pense pas qu'il faille mettre le contenu de ce dossier
-# --------------------------
-
+# CONTENU UTILISATEUR (images)
+#-------------------------
+# Ignore toutes les images uploadées, mais garde le dossier
 public/images/*
+!public/images/.gitkeep
