@@ -124,3 +124,10 @@ nb-configuration.xml
 
 /results/
 /phpunit*.xml
+
+
+#-------------------------
+# Je mets ça là pour le moment vu que je pense pas qu'il faille mettre le contenu de ce dossier
+# --------------------------
+
+public/images/*
